@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import pandas as pd
 import webbrowser, os, time, sys
 
@@ -585,13 +587,1575 @@ def WCBatfunc():
     open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
     webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
 
+def LIBdefunc(): 
+    FMScoutFile['LIBde'] = ((FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp'] * 0.6) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta']) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/17
+    FMScoutFile.LIBde = FMScoutFile.LIBde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.LIBde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='LIBde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def LIBsufunc(): 
+    FMScoutFile['LIBsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp'] * 0.6) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta']) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/19
+    FMScoutFile.LIBsu = FMScoutFile.LIBsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.LIBsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='LIBsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def BPDdefunc(): 
+    FMScoutFile['BPDde'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp'] * 0.6) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/17
+    FMScoutFile.BPDde = FMScoutFile.BPDde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.BPDde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='BPDde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def BPDstfunc(): 
+    FMScoutFile['BPDst'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar']) + 
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Agg'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) + 
+                           (FMScoutFile['Cmp'] * 0.6) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/16
+    FMScoutFile.BPDst = FMScoutFile.BPDst.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.BPDst], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='BPDst', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def BPDcofunc(): 
+    FMScoutFile['BPDco'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea']) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) + 
+                           (FMScoutFile['Cmp'] * 0.6) + 
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Jum']) +
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/16
+    FMScoutFile.BPDco = FMScoutFile.BPDco.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.BPDco], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='BPDco', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def NNCBdefunc(): 
+    FMScoutFile['NNCBde'] = ((FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/11
+    FMScoutFile.NNCBde = FMScoutFile.NNCBde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.NNCBde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='NNCBde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def NNCBstfunc(): 
+    FMScoutFile['NNCBst'] = ((FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar']) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Agg'] * 0.6) +
+                           (FMScoutFile['Bra'] * 0.6) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/10
+    FMScoutFile.NNCBst = FMScoutFile.NNCBst.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.NNCBst], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='NNCBst', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def NNCBcofunc(): 
+    FMScoutFile['NNCBco'] = ((FMScoutFile['Hea']) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Jum']) +
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Str'])
+                           )/10
+    FMScoutFile.NNCBco = FMScoutFile.NNCBco.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.NNCBco], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='NNCBco', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CBdefunc(): 
+    FMScoutFile['CBde'] = ((FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Agg']) + 
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp']) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) + 
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/13
+    FMScoutFile.CBde = FMScoutFile.CBde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CBde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CBde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CBstfunc(): 
+    FMScoutFile['CBst'] = ((FMScoutFile['Hea'] * 0.6) + 
+                           (FMScoutFile['Mar']) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Agg'] * 0.6) + 
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) + 
+                           (FMScoutFile['Cmp']) + 
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) + 
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Str'] * 0.6)
+                           )/1
+    FMScoutFile.CBst = FMScoutFile.CBst.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CBst], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CBst', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CBcofunc(): 
+    FMScoutFile['CBco'] = ((FMScoutFile['Hea']) + 
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp']) + 
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) + 
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Jum']) +
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Str'])
+                           )/12
+    FMScoutFile.CBco = FMScoutFile.CBco.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CBco], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CBco', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+# Table columns for Defensive midfield roles
+
+def BWMdefunc():
+    FMScoutFile['BWMde'] = ((FMScoutFile['Mar']) +
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Agg'] * 0.6) + 
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Pos']) + 
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) + 
+                           (FMScoutFile['Agi']) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta'] * 0.6) + 
+                           (FMScoutFile['Str'])
+                           )/13
+    FMScoutFile.BWMde = FMScoutFile.BWMde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.BWMde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='BWMde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def BWMsufunc():
+    FMScoutFile['BWMsu'] = ((FMScoutFile['Mar']) + 
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Agg'] * 0.6) + 
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) + 
+                           (FMScoutFile['Agi']) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta'] * 0.6) + 
+                           (FMScoutFile['Str'])
+                           )/13
+    FMScoutFile.BWMsu = FMScoutFile.BWMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.BWMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='BWMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def SVsufunc():
+    FMScoutFile['SVsu'] = ((FMScoutFile['Fin']) + 
+                           (FMScoutFile['Fir']) + 
+                           (FMScoutFile['Lon']) +   
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) + 
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) + 
+                           (FMScoutFile['Str'])
+                           )/18
+    FMScoutFile.SVsu = FMScoutFile.SVsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.SVsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='SVsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def SVatfunc():
+    FMScoutFile['SVat'] = ((FMScoutFile['Fin'] * 0.6) + 
+                           (FMScoutFile['Fir']) + 
+                           (FMScoutFile['Lon'] * 0.6) +   
+                           (FMScoutFile['Mar']) + 
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) + 
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) + 
+                           (FMScoutFile['Str'])
+                           )/18
+    FMScoutFile.SVat = FMScoutFile.SVat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.SVat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='SVat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def HBdefunc():
+    FMScoutFile['HBde'] = ((FMScoutFile['Fir']) +   
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck'] * 0.6) +   
+                           (FMScoutFile['Agg']) + 
+                           (FMScoutFile['Ant'] * 0.6) +  
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +  
+                           (FMScoutFile['Tea'] * 0.6) + 
+                           (FMScoutFile['Wor']) + 
+                           (FMScoutFile['Jum']) +
+                           (FMScoutFile['Sta']) + 
+                           (FMScoutFile['Str'])
+                           )/16
+    FMScoutFile.HBde = FMScoutFile.HBde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.HBde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='HBde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def HBdefunc():
+    FMScoutFile['HBde'] = ((FMScoutFile['Fir']) +   
+                           (FMScoutFile['Mar'] * 0.6) + 
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck'] * 0.6) +   
+                           (FMScoutFile['Agg']) + 
+                           (FMScoutFile['Ant'] * 0.6) +  
+                           (FMScoutFile['Bra']) + 
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +  
+                           (FMScoutFile['Tea'] * 0.6) + 
+                           (FMScoutFile['Wor']) + 
+                           (FMScoutFile['Jum']) +
+                           (FMScoutFile['Sta']) + 
+                           (FMScoutFile['Str'])
+                           )/16
+    FMScoutFile.HBde = FMScoutFile.HBde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.HBde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='HBde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def ANCdefunc():
+    FMScoutFile['ANCde'] = ((FMScoutFile['Mar'] * 0.6) +  
+                           (FMScoutFile['Tck'] * 0.6) +  
+                           (FMScoutFile['Ant'] * 0.6) + 
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +  
+                           (FMScoutFile['Tea']) +
+                           (FMScoutFile['Str'])
+                           )/9
+    FMScoutFile.ANCde = FMScoutFile.ANCde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.ANCde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='ANCde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DMdefunc():
+    FMScoutFile['DMde'] = ((FMScoutFile['Mar']) +
+                           (FMScoutFile['Pas']) +    
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Agg']) +   
+                           (FMScoutFile['Ant'] * 0.6) + 
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['Pos'] * 0.6) +  
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) + 
+                           (FMScoutFile['Sta']) + 
+                           (FMScoutFile['Str'])
+                           )/13
+    FMScoutFile.DMde = FMScoutFile.DMde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DMde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DMde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DMsufunc():
+    FMScoutFile['DMsu'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Mar']) +
+                           (FMScoutFile['Pas']) +    
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Agg']) +   
+                           (FMScoutFile['Ant'] * 0.6) + 
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['Pos'] * 0.6) +  
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) + 
+                           (FMScoutFile['Sta']) + 
+                           (FMScoutFile['Str'])
+                           )/14
+    FMScoutFile.DMsu = FMScoutFile.DMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def RPMsufunc():
+    FMScoutFile['RPMsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) +    
+                           (FMScoutFile['Tec'] * 0.6) +  
+                           (FMScoutFile['Ant'] * 0.6) + 
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Pos']) +  
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor']) + 
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) +
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta'] * 0.6) 
+                           )/19
+    FMScoutFile.RPMsu = FMScoutFile.RPMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.RPMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='RPMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def REGsufunc():
+    FMScoutFile['REGsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) +    
+                           (FMScoutFile['Tec'] * 0.6) +  
+                           (FMScoutFile['Ant']) + 
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Bal'])  
+                           )/13
+    FMScoutFile.REGsu = FMScoutFile.REGsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.REGsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='REGsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DLPMdefunc():
+    FMScoutFile['DLPde'] = ((FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck']) +   
+                           (FMScoutFile['Tec'] * 0.6) +  
+                           (FMScoutFile['Ant']) + 
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Bal'])  
+                           )/13
+    FMScoutFile.DLPde = FMScoutFile.DLPde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DLPde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DLPde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DLPMsufunc():
+    FMScoutFile['DLPsu'] = ((FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['OtB']) +   
+                           (FMScoutFile['Tec'] * 0.6) +  
+                           (FMScoutFile['Ant']) + 
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Bal'])  
+                           )/13
+    FMScoutFile.DLPsu = FMScoutFile.DLPsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DLPsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DLPsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+# Table columns for Central midfield roles 
+
+def CMdefunc():
+    FMScoutFile['CMde'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Mar']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Sta'])  
+                           )/14
+    FMScoutFile.CMde = FMScoutFile.CMde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CMde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CMde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CMsufunc():
+    FMScoutFile['CMsu'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Sta'])  
+                           )/13
+    FMScoutFile.CMsu = FMScoutFile.CMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CMatfunc():
+    FMScoutFile['CMat'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Sta'])  
+                           )/14
+    FMScoutFile.CMat = FMScoutFile.CMat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CMat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CMat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CARsufunc():
+    FMScoutFile['CARsu'] = ((FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck']) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Tea']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Sta'])  
+                           )/14
+    FMScoutFile.CARsu = FMScoutFile.CARsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CARsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CARsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def MEZsufunc():
+    FMScoutFile['MEZsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck']) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Bal'])  +
+                           (FMScoutFile['Sta'])  
+                           )/15
+    FMScoutFile.MEZsu = FMScoutFile.MEZsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.MEZsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='MEZsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def MEZatfunc():
+    FMScoutFile['MEZat'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck']) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Bal'])  +
+                           (FMScoutFile['Sta'])  
+                           )/17
+    FMScoutFile.MEZat = FMScoutFile.MEZat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.MEZat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='MEZat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def B2Bsufunc():
+    FMScoutFile['B2Bsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Pos']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta'] * 0.6) +
+                           (FMScoutFile['Str'])  
+                           )/20
+    FMScoutFile.B2Bsu = FMScoutFile.B2Bsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.B2Bsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='B2Bsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+# Table columns for Wide midfield roles 
+
+def WPMsufunc():
+    FMScoutFile['WPMsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Agi']) 
+                           )/10
+    FMScoutFile.WPMsu = FMScoutFile.WPMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WPMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WPMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WPMatfunc():
+    FMScoutFile['WPMat'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Agi']) 
+                           )/13
+    FMScoutFile.WPMat = FMScoutFile.WPMat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WPMat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WPMat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DWdefunc():
+    FMScoutFile['DWde'] = ((FMScoutFile['Cro']) +
+                           (FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Mar']) +
+                           (FMScoutFile['Tck']) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Sta'] * 0.6) 
+                           )/18
+    FMScoutFile.DWde = FMScoutFile.DWde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DWde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DWde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DWsufunc():
+    FMScoutFile['DWsu'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Mar']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tck']) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Pos']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Sta'] * 0.6) 
+                           )/18
+    FMScoutFile.DWsu = FMScoutFile.DWsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DWsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DWsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WMdefunc():
+    FMScoutFile['WMde'] = ((FMScoutFile['Cro']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Mar']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Pos'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Sta']) 
+                           )/14
+    FMScoutFile.WMde = FMScoutFile.WMde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WMde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WMde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WMsufunc():
+    FMScoutFile['WMsu'] = ((FMScoutFile['Cro']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck'] * 0.6) + 
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Pos']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) 
+                           )/15
+    FMScoutFile.WMsu = FMScoutFile.WMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WMatfunc():
+    FMScoutFile['WMat'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tck']) + 
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) 
+                           )/15
+    FMScoutFile.WMat = FMScoutFile.WMat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WMat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WMat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+# Table columns for Central attacking midfield roles
+
+def APMsufunc():
+    FMScoutFile['APMsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Agi'])  
+                           )/12
+    FMScoutFile.APMsu = FMScoutFile.APMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.APMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='APMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def APMatfunc():
+    FMScoutFile['APMat'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Acc']) +
+                           (FMScoutFile['Agi'])  
+                           )/12
+    FMScoutFile.APMat = FMScoutFile.APMat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.APMat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='APMat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def AMsufunc():
+    FMScoutFile['AMsu'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Lon'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Agi'])  
+                           )/12
+    FMScoutFile.AMsu = FMScoutFile.AMsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.AMsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='AMsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def AMatfunc():
+    FMScoutFile['AMat'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Lon'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Agi'])  
+                           )/13
+    FMScoutFile.AMat = FMScoutFile.AMat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.AMat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='AMat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def SSatfunc():
+    FMScoutFile['SSat'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) + 
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pace']) + 
+                           (FMScoutFile['Sta'])  
+                           )/16
+    FMScoutFile.SSat = FMScoutFile.SSat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.SSat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='SSat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def TREatfunc():
+    FMScoutFile['TREat'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) + 
+                           (FMScoutFile['Bal']) 
+                           )/14
+    FMScoutFile.TREat = FMScoutFile.TREat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.TREat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='TREat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def ENGsufunc():
+    FMScoutFile['ENGsu'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) + 
+                           (FMScoutFile['Bal']) 
+                           )/14
+    FMScoutFile.ENGsu = FMScoutFile.ENGsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.ENGsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='ENGsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+# Table columns for Wide attacking midfield roles 
+
+def IWsufunc():
+    FMScoutFile['IWsu'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/16
+    FMScoutFile.IWsu = FMScoutFile.IWsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.IWsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='IWsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def IWatfunc():
+    FMScoutFile['IWat'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'] * 0.6) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/18
+    FMScoutFile.IWat = FMScoutFile.IWat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.IWat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='IWat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def IFsufunc():
+    FMScoutFile['IFsu'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/17
+    FMScoutFile.IFsu = FMScoutFile.IFsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.IFsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='IFsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def IFatfunc():
+    FMScoutFile['IFat'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/16
+    FMScoutFile.IFat = FMScoutFile.IFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.IFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='IFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WINsufunc():
+    FMScoutFile['WINsu'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/12
+    FMScoutFile.WINsu = FMScoutFile.WINsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WINsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WINsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WINatfunc():
+    FMScoutFile['WINat'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/14
+    FMScoutFile.WINat = FMScoutFile.WINat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WINat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WINat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def RMDatfunc():
+    FMScoutFile['RMDat'] = ((FMScoutFile['Cro'] * 0.6) +
+                           (FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) + 
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Pac']) +
+                           (FMScoutFile['Sta']) 
+                           )/15
+    FMScoutFile.RMDat = FMScoutFile.RMDat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.RMDat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='RMDat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WTFsufunc():
+    FMScoutFile['WTFsu'] = ((FMScoutFile['Cro']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Sta']) +
+                           (FMScoutFile['Str']) 
+                           )/12
+    FMScoutFile.WTFsu = FMScoutFile.WTFsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WTFsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WTFsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def WTFatfunc():
+    FMScoutFile['WTFat'] = ((FMScoutFile['Cro']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Bal']) +
+                           (FMScoutFile['Jum'] * 0.6) +
+                           (FMScoutFile['Sta']) +
+                           (FMScoutFile['Str']) 
+                           )/12
+    FMScoutFile.WTFat = FMScoutFile.WTFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.WTFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='WTFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+# Table columns for Striker roles 
+
+def AFatfunc():
+    FMScoutFile['AFat'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Pas']) + 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) 
+                           )/15
+    FMScoutFile.AFat = FMScoutFile.AFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.AFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='AFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CFsufunc():
+    FMScoutFile['CFsu'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Hea'] * 0.6) +
+                           (FMScoutFile['Lon'] * 0.6) +
+                           (FMScoutFile['Pas'] * 0.6)+ 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea']) +
+                           (FMScoutFile['Vis'] * 0.6) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Jum']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) +
+                           (FMScoutFile['Str'] * 0.6) 
+                           )/21
+    FMScoutFile.CFsu = FMScoutFile.CFsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CFsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CFsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def CFatfunc():
+    FMScoutFile['CFat'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Hea'] * 0.6) +
+                           (FMScoutFile['Lon']) +
+                           (FMScoutFile['Pas'])+ 
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea']) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Wor']) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'] * 0.6) +
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Jum']) + 
+                           (FMScoutFile['Pac']) + 
+                           (FMScoutFile['Sta']) +
+                           (FMScoutFile['Str'] * 0.6) 
+                           )/21
+    FMScoutFile.CFat = FMScoutFile.CFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.CFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='CFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def POAatfunc():
+    FMScoutFile['POAat'] = ((FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea']) +
+                           (FMScoutFile['Tec']) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi'])  
+                           )/10
+    FMScoutFile.POAat = FMScoutFile.POAat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.POAat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='POAat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def PFdefunc():
+    FMScoutFile['PFde'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Agg'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) +  
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) +
+                           (FMScoutFile['Str']) 
+                           )/14
+    FMScoutFile.PFde = FMScoutFile.PFde.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.PFde], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='PFde', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def PFsufunc():
+    FMScoutFile['PFsu'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Pas']) +
+                           (FMScoutFile['Agg'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) +  
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) +
+                           (FMScoutFile['Str']) 
+                           )/16
+    FMScoutFile.PFsu = FMScoutFile.PFsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.PFsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='PFsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def PFatfunc():
+    FMScoutFile['PFat'] = ((FMScoutFile['Fir']) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Agg'] * 0.6) +
+                           (FMScoutFile['Ant'] * 0.6) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Cnt']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Wor'] * 0.6) +
+                           (FMScoutFile['Acc'] * 0.6) +
+                           (FMScoutFile['Agi']) +  
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Pac'] * 0.6) +
+                           (FMScoutFile['Sta'] * 0.6) +
+                           (FMScoutFile['Str']) 
+                           )/16
+    FMScoutFile.PFat = FMScoutFile.PFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.PFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='PFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DLFsufunc():
+    FMScoutFile['DLFsu'] = ((FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Agi']) +  
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Str']) 
+                           )/14
+    FMScoutFile.DLFsu = FMScoutFile.DLFsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DLFsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DLFsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def DLFatfunc():
+    FMScoutFile['DLFat'] = ((FMScoutFile['Dri']) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Vis']) +
+                           (FMScoutFile['Agi']) +  
+                           (FMScoutFile['Bal']) + 
+                           (FMScoutFile['Str']) 
+                           )/15
+    FMScoutFile.DLFat = FMScoutFile.DLFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.DLFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='DLFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def TFsufunc():
+    FMScoutFile['TFsu'] = ((FMScoutFile['Fin']) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea'] * 0.6) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['Cmp']) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB']) +
+                           (FMScoutFile['Tea'] * 0.6) +
+                           (FMScoutFile['Bal'] * 0.6) + 
+                           (FMScoutFile['Jum'] * 0.6) + 
+                           (FMScoutFile['Str'] * 0.6) 
+                           )/13
+    FMScoutFile.TFsu = FMScoutFile.TFsu.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.TFsu], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='TFsu', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def TFatfunc():
+    FMScoutFile['TFat'] = ((FMScoutFile['Fin'] * 0.6) +
+                           (FMScoutFile['Fir']) +
+                           (FMScoutFile['Hea'] * 0.6) +
+                           (FMScoutFile['Agg']) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Bra'] * 0.6) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea']) +
+                           (FMScoutFile['Bal'] * 0.6) + 
+                           (FMScoutFile['Jum'] * 0.6) + 
+                           (FMScoutFile['Str'] * 0.6) 
+                           )/13
+    FMScoutFile.TFat = FMScoutFile.TFat.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.TFat], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='TFat', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+def F9sufunc():
+    FMScoutFile['F9su'] = ((FMScoutFile['Dri'] * 0.6) +
+                           (FMScoutFile['Fir'] * 0.6) +
+                           (FMScoutFile['Fin']) +
+                           (FMScoutFile['Pas'] * 0.6) +
+                           (FMScoutFile['Tec'] * 0.6) +
+                           (FMScoutFile['Ant']) +
+                           (FMScoutFile['Cmp'] * 0.6) +
+                           (FMScoutFile['Dec'] * 0.6) +
+                           (FMScoutFile['Fla']) +
+                           (FMScoutFile['OtB'] * 0.6) +
+                           (FMScoutFile['Tea']) 
+                           (FMScoutFile['Vis'] * 0.6) + 
+                           (FMScoutFile['Acc'] * 0.6) + 
+                           (FMScoutFile['Agi'] * 0.6) + 
+                           (FMScoutFile['Bal']) 
+                           )/15
+    FMScoutFile.F9su = FMScoutFile.F9su.round(1) # Rounds the result to the nearest tenth
+    Output = pd.concat([Details, FMScoutFile.F9su], axis=1, join='inner') # Adds the column to the table with the columns with player details in it and creates one table.
+    html = generate_html(Output.sort_values(by='F9su', ascending=False)) # Generates an html file containing the new dataframe and sorts in in descending order by the role that is being analysed.
+    filename = str('FMScoutOutput' + ".html") # Creates a file and gives it the name of 'FMScoutOutput'.
+    open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
+    webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser.
+
+
 # Intro and asks which role is being analysed.
-# Then based upon the input of the useror RoleInput == passes the custom function of the role that the input text matches to.
+# Then based upon the input of the user or RoleInput == passes the custom function of the role that the input text matches to.
 # The input text is matched to one of many possible inputs that has been used to describe the role that the user wants to analyse.
 # The input text is caseor RoleInput == space and dash insensitive for user experience.
 def RoleQs(): # Asks user which role they would like analysed.
     while True:
-        print('Hello, welcome to FMScout by Joe Grant. Which role would you like analysed? Type the full name of the role, its short-hand name on FM.')
+        print('Hello, welcome to FMScout by Joe Grant. Which role would you like analysed? Type the full name of the role or its short-hand name on FM.')
         RoleInput = input()
         RoleInput = ''.join(RoleInput.split()).lower()
 
@@ -624,7 +2188,7 @@ def RoleQs(): # Asks user which role they would like analysed.
         elif RoleInput == 'wbde' or RoleInput ==  'wbdefend' or RoleInput ==  'wb(defend)' or RoleInput ==  'wb(de)'  or RoleInput ==  'wingback(de)'  or RoleInput ==  'wing-back(de)'  or RoleInput ==  'wingbackde'  or RoleInput ==  'wing-backde'  or RoleInput ==  'wingbackdefend'  or RoleInput ==  'wing-backdefend'  or RoleInput ==  'wingback(defend)'  or RoleInput ==  'wing-back(defend)' :
             WBdefunc()
             AnotherRoleQ()
-        elif RoleInput == 'wbsu'  or RoleInput ==  'wbsupport' or RoleInput ==  'wb(support)' or RoleInput ==  'wb(su)' or RoleInput ==  'wingback(su)'  or RoleInput ==  'wing-back(su)'  or RoleInput ==  'wingbacksu'  or RoleInput ==  'wing-backsu'  or RoleInput ==  'wingbacksupport'  or RoleInput ==  'wing-backsupport'  or RoleInput ==  'wingback(support)'  or RoleInput ==  'wing-back(support)' :
+        elif RoleInput == 'wbsu'  or RoleInput == 'wb' or RoleInput == 'wingback' or RoleInput ==  'wbsupport' or RoleInput ==  'wb(support)' or RoleInput ==  'wb(su)' or RoleInput ==  'wingback(su)'  or RoleInput ==  'wing-back(su)'  or RoleInput ==  'wingbacksu'  or RoleInput ==  'wing-backsu'  or RoleInput ==  'wingbacksupport'  or RoleInput ==  'wing-backsupport'  or RoleInput ==  'wingback(support)'  or RoleInput ==  'wing-back(support)' :
             WBsufunc()
             AnotherRoleQ()
         elif RoleInput == 'wbat'   or RoleInput ==  'wb(at)'   or RoleInput ==  'wbattack'   or RoleInput ==  'wb(attack)'   or RoleInput ==  'wingback(at)'    or RoleInput ==  'wing-back(at)'    or RoleInput ==  'wingbackat'    or RoleInput ==  'wing-backat'    or RoleInput ==  'wingbackattack'    or RoleInput ==  'wing-backattack'    or RoleInput ==  'wingback(attack)'    or RoleInput ==  'wing-back(attack)':
@@ -695,7 +2259,7 @@ def RoleQs(): # Asks user which role they would like analysed.
 
         elif RoleInput == 'dlpmde'  or RoleInput ==  'dlpm(de)' or RoleInput ==  'dlpmdefend' or RoleInput ==  'dlpm(defend)' or RoleInput ==  'dlpm' or RoleInput ==  'deeplyingplaymaker' or RoleInput ==  'deeplyingplay-maker'  or RoleInput ==  'deeplying-playmaker' or RoleInput ==  'deep-lyingplaymaker' or RoleInput ==  'deep-lying-playmaker' or RoleInput ==  'deep-lying-play-maker' or RoleInput ==  'deeplying-play-maker' or RoleInput ==  'deep-lyingplay-maker' or RoleInput ==  'deeplyingplaymaker(de)' or RoleInput ==  'deeplyingplay-maker(de)'  or RoleInput ==  'deeplying-playmaker(de)' or RoleInput ==  'deep-lyingplaymaker(de)' or RoleInput ==  'deep-lying-playmaker(de)' or RoleInput ==  'deep-lying-play-maker(de)' or RoleInput ==  'deeplying-play-maker(de)' or RoleInput ==  'deep-lyingplay-maker(de)' or RoleInput ==  'deeplyingplaymaker(defend)' or RoleInput ==  'deeplyingplay-maker(defend)'  or RoleInput ==  'deeplying-playmaker(defend)' or RoleInput ==  'deep-lyingplaymaker(defend)' or RoleInput ==  'deep-lying-playmaker(defend)' or RoleInput ==  'deep-lying-play-maker(defend)' or RoleInput ==  'deeplying-play-maker(defend)' or RoleInput ==  'deep-lyingplay-maker(defend)' or RoleInput ==  'deeplyingplaymakerdefend' or RoleInput ==  'deeplyingplay-makerdefend'  or RoleInput ==  'deeplying-playmakerdefend' or RoleInput ==  'deep-lyingplaymakerdefend' or RoleInput ==  'deep-lying-playmakerdefend' or RoleInput ==  'deep-lying-play-makerdefend' or RoleInput ==  'deeplying-play-makerdefend' or RoleInput ==  'deep-lyingplay-makerdefend' :
             DLPMdefunc()
-            AnotherRoleQ()
+            AnotherRoleQ() 
         elif RoleInput == 'dlpmsu'  or RoleInput ==  'dlpm(su)' or RoleInput ==  'dlpmsupport' or RoleInput ==  'dlpm(support)' or RoleInput ==  'deeplyingplaymaker(su)' or RoleInput ==  'deeplyingplay-maker(su)'  or RoleInput ==  'deeplying-playmaker(su)' or RoleInput ==  'deep-lyingplaymaker(su)' or RoleInput ==  'deep-lying-playmaker(su)' or RoleInput ==  'deep-lying-play-maker(su)' or RoleInput ==  'deeplying-play-maker(su)' or RoleInput ==  'deep-lyingplay-maker(su)' or RoleInput ==  'deeplyingplaymaker(support)' or RoleInput ==  'deeplyingplay-maker(support)'  or RoleInput ==  'deeplying-playmaker(support)' or RoleInput ==  'deep-lyingplaymaker(support)' or RoleInput ==  'deep-lying-playmaker(support)' or RoleInput ==  'deep-lying-play-maker(support)' or RoleInput ==  'deeplying-play-maker(support)' or RoleInput ==  'deep-lyingplay-maker(support)' or RoleInput ==  'deeplyingplaymakersupport' or RoleInput ==  'deeplyingplay-makersupport'  or RoleInput ==  'deeplying-playmakersupport' or RoleInput ==  'deep-lyingplaymakersupport' or RoleInput ==  'deep-lying-playmakersupport' or RoleInput ==  'deep-lying-play-makersupport' or RoleInput ==  'deeplying-play-makersupport' or RoleInput ==  'deep-lyingplay-makersupport' :
             DLPMsufunc()
             AnotherRoleQ()
@@ -825,10 +2389,10 @@ def RoleQs(): # Asks user which role they would like analysed.
         elif RoleInput == 'rmdat'   or RoleInput ==  'rmd'   or RoleInput ==  'rmd(at)'   or RoleInput ==  'rmdattack'   or RoleInput ==  'rmd(attack)'   or RoleInput ==  'raumdeuter'   or RoleInput ==  'raumdeuter(at)'   or RoleInput ==  'raumdeuterattack'   or RoleInput ==  'raumdeuter(attack)' :
             RMDatfunc()
             AnotherRoleQ()
-        elif RoleInput == 'wtmsu'   or RoleInput ==  'wtm'    or RoleInput ==  'wtm(su)'   or RoleInput ==  'wtmsupport'   or RoleInput ==  'wtm(support)'   or RoleInput ==  'widetargetman'   or RoleInput ==  'wide-targetman'   or RoleInput ==  'widetarget-man'   or RoleInput ==  'wide-target-man'   or RoleInput ==  'widetargetman(su)'   or RoleInput ==  'widetarget-man(su)'    or RoleInput ==  'wide-targetman(su)'   or RoleInput ==  'wide-target-man(su)'   or RoleInput ==  'widetargetman(support)'   or RoleInput ==  'widetarget-man(support)'    or RoleInput ==  'wide-targetman(support)'   or RoleInput ==  'wide-target-man(support)'   or RoleInput ==  'widetargetmansupport'   or RoleInput ==  'widetarget-mansupport'    or RoleInput ==  'wide-targetmansupport'   or RoleInput ==  'wide-target-mansupport' :
+        elif RoleInput == 'wtmsu'   or RoleInput ==  'wtm'    or RoleInput ==  'wtm(su)'   or RoleInput ==  'wtmsupport'   or RoleInput ==  'wtm(support)'   or RoleInput ==  'widetargetman'   or RoleInput ==  'wide-targetman'   or RoleInput ==  'widetarget-man'   or RoleInput ==  'wide-target-man'   or RoleInput ==  'widetargetman(su)'   or RoleInput ==  'widetarget-man(su)'    or RoleInput ==  'wide-targetman(su)'   or RoleInput ==  'wide-target-man(su)'   or RoleInput ==  'widetargetman(support)'   or RoleInput ==  'widetarget-man(support)'    or RoleInput ==  'wide-targetman(support)'   or RoleInput ==  'wide-target-man(support)'   or RoleInput ==  'widetargetmansupport'   or RoleInput ==  'widetarget-mansupport'    or RoleInput ==  'wide-targetmansupport'   or RoleInput ==  'wide-target-mansupport' or RoleInput == 'wtfsu'   or RoleInput ==  'wtf'    or RoleInput ==  'wtf(su)'   or RoleInput ==  'wtfsupport'   or RoleInput ==  'wtf(support)'   or RoleInput ==  'widetargetforward'   or RoleInput ==  'wide-targetforward'   or RoleInput ==  'widetarget-forward'   or RoleInput ==  'wide-target-forward'   or RoleInput ==  'widetargetforward(su)'   or RoleInput ==  'widetarget-forward(su)'    or RoleInput ==  'wide-targetforward(su)'   or RoleInput ==  'wide-target-forward(su)'   or RoleInput ==  'widetargetforward(support)'   or RoleInput ==  'widetarget-forward(support)'    or RoleInput ==  'wide-targetforward(support)'   or RoleInput ==  'wide-target-forward(support)'   or RoleInput ==  'widetargetforwardsupport'   or RoleInput ==  'widetarget-forwardsupport'    or RoleInput ==  'wide-targetforwardsupport'   or RoleInput ==  'wide-target-forwardsupport' :
             WTMsufunc()
             AnotherRoleQ()
-        elif RoleInput == 'wtmat'   or RoleInput ==  'wtm'    or RoleInput ==  'wtm(at)'   or RoleInput ==  'wtmattack'   or RoleInput ==  'wtm(attack)'   or RoleInput ==  'widetargetman(at)'   or RoleInput ==  'widetarget-man(at)'    or RoleInput ==  'wide-targetman(at)'   or RoleInput ==  'wide-target-man(at)'   or RoleInput ==  'widetargetman(attack)'   or RoleInput ==  'widetarget-man(attack)'    or RoleInput ==  'wide-targetman(attack)'   or RoleInput ==  'wide-target-man(attack)'   or RoleInput ==  'widetargetmanattack'   or RoleInput ==  'widetarget-manattack'    or RoleInput ==  'wide-targetmanattack'   or RoleInput ==  'wide-target-manattack' :
+        elif RoleInput == 'wtmat'   or RoleInput ==  'wtm(at)'   or RoleInput ==  'wtmattack'   or RoleInput ==  'wtm(attack)'   or RoleInput ==  'widetargetman(at)'   or RoleInput ==  'widetarget-man(at)'    or RoleInput ==  'wide-targetman(at)'   or RoleInput ==  'wide-target-man(at)'   or RoleInput ==  'widetargetman(attack)'   or RoleInput ==  'widetarget-man(attack)'    or RoleInput ==  'wide-targetman(attack)'   or RoleInput ==  'wide-target-man(attack)'   or RoleInput ==  'widetargetmanattack'   or RoleInput ==  'widetarget-manattack'    or RoleInput ==  'wide-targetmanattack'   or RoleInput ==  'wide-target-manattack' or RoleInput == 'wtfat'  or RoleInput ==  'wtf(at)'   or RoleInput ==  'wtfattack'   or RoleInput ==  'wtf(attack)' or RoleInput ==  'widetargetforward(at)'   or RoleInput ==  'widetarget-forward(at)'    or RoleInput ==  'wide-targetforward(at)'   or RoleInput ==  'wide-target-forward(at)'   or RoleInput ==  'widetargetforward(attack)'   or RoleInput ==  'widetarget-forward(attack)'    or RoleInput ==  'wide-targetforward(attack)'   or RoleInput ==  'wide-target-forward(attack)'   or RoleInput ==  'widetargetforwardattack'   or RoleInput ==  'widetarget-forwardattack'    or RoleInput ==  'wide-targetforwardattack'   or RoleInput ==  'wide-target-forwardattack' :
             WTMatfunc()
             AnotherRoleQ()
         
@@ -858,10 +2422,10 @@ def RoleQs(): # Asks user which role they would like analysed.
         elif RoleInput == 'dlfat'   or RoleInput ==  'dlf(at)'   or RoleInput ==  'dlfattack'   or RoleInput ==  'dlf(attack)'   or RoleInput ==  'deeplyingforward(at)'   or RoleInput ==  'deeplying-forward(at)'    or RoleInput ==  'deep-lyingforward(at)'   or RoleInput ==  'deep-lying-forward(at)'   or RoleInput ==  'deeplyingforward(attack)'   or RoleInput ==  'deeplying-forward(attack)'    or RoleInput ==  'deep-lyingforward(attack)'   or RoleInput ==  'deep-lying-forward(attack)'   or RoleInput ==  'deeplyingforwardattack'   or RoleInput ==  'deeplying-forwardattack'    or RoleInput ==  'deep-lyingforwardattack'   or RoleInput ==  'deep-lying-forwardattack' :
             DLFatfunc()
             AnotherRoleQ()
-        elif RoleInput == 'tmsu'  or RoleInput ==  'tm' or RoleInput ==  'tm(su)' or RoleInput ==  'tmsupport' or RoleInput ==  'tm(support)' or RoleInput ==  'targetman'  or RoleInput ==  'target-man' or RoleInput ==  'targetman(su)'  or RoleInput ==  'target-man(su)'  or RoleInput ==  'targetmansu'  or RoleInput ==  'target-mansu'  or RoleInput ==  'targetmansupport'  or RoleInput ==  'target-mansupport' or RoleInput ==  'targetman(support)'  or RoleInput ==  'target-man(support)' :
+        elif RoleInput == 'tmsu'  or RoleInput ==  'tm' or RoleInput ==  'tm(su)' or RoleInput ==  'tmsupport' or RoleInput ==  'tm(support)' or RoleInput ==  'targetman'  or RoleInput ==  'target-man' or RoleInput ==  'targetman(su)'  or RoleInput ==  'target-man(su)'  or RoleInput ==  'targetmansu'  or RoleInput ==  'target-mansu'  or RoleInput ==  'targetmansupport'  or RoleInput ==  'target-mansupport' or RoleInput ==  'targetman(support)'  or RoleInput ==  'target-man(support)' or RoleInput == 'tmsu'  or RoleInput ==  'tm' or RoleInput ==  'tm(su)' or RoleInput ==  'tmsupport' or RoleInput ==  'tm(support)' or RoleInput ==  'targetforward'  or RoleInput ==  'target-forward' or RoleInput ==  'targetforward(su)'  or RoleInput ==  'target-forward(su)'  or RoleInput ==  'targetforwardsu'  or RoleInput ==  'target-forwardsu'  or RoleInput ==  'targetforwardsupport'  or RoleInput ==  'target-forwardsupport' or RoleInput ==  'targetforward(support)'  or RoleInput ==  'target-forward(support)' :
             TMsufunc()
             AnotherRoleQ()
-        elif RoleInput == 'tmat'  or RoleInput ==  'tm(at)' or RoleInput ==  'tmattack' or RoleInput ==  'tm(attack)' or RoleInput ==  'targetman(at)'  or RoleInput ==  'target-man(at)'  or RoleInput ==  'targetmanat'  or RoleInput ==  'target-manat'  or RoleInput ==  'targetmanattack'  or RoleInput ==  'target-manattack' or RoleInput ==  'targetman(attack)'  or RoleInput ==  'target-man(attack)' :
+        elif RoleInput == 'tmat'  or RoleInput ==  'tm(at)' or RoleInput ==  'tmattack' or RoleInput ==  'tm(attack)' or RoleInput ==  'targetman(at)'  or RoleInput ==  'target-man(at)'  or RoleInput ==  'targetmanat'  or RoleInput ==  'target-manat'  or RoleInput ==  'targetmanattack'  or RoleInput ==  'target-manattack' or RoleInput ==  'targetman(attack)'  or RoleInput ==  'target-forward(attack)' or RoleInput == 'tmat'  or RoleInput ==  'tm(at)' or RoleInput ==  'tmattack' or RoleInput ==  'tm(attack)' or RoleInput ==  'targetforward(at)'  or RoleInput ==  'target-forward(at)'  or RoleInput ==  'targetforwardat'  or RoleInput ==  'target-forwardat'  or RoleInput ==  'targetforwardattack'  or RoleInput ==  'target-forwardattack' or RoleInput ==  'targetforward(attack)'  or RoleInput ==  'target-forward(attack)' :
             TMatfunc()
             AnotherRoleQ()
         elif RoleInput == 'f9su'  or RoleInput ==  'f9' or RoleInput ==  'f9(su)' or RoleInput ==  'f9support' or RoleInput ==  'f9(support)' or RoleInput ==  'falsenine'  or RoleInput ==  'false-nine' or RoleInput ==  'falsenine(su)'  or RoleInput ==  'false-nine(su)'  or RoleInput ==  'falseninesu'  or RoleInput ==  'false-ninesu'  or RoleInput ==  'falseninesupport'  or RoleInput ==  'false-ninesupport' or RoleInput ==  'falsenine(support)'  or RoleInput ==  'false-nine(support)' or RoleInput ==  'false9'  or RoleInput ==  'false-9' or RoleInput ==  'false9(su)'  or RoleInput ==  'false-9(su)'  or RoleInput ==  'false9su'  or RoleInput ==  'false-9su'  or RoleInput ==  'false9support'  or RoleInput ==  'false-9support' or RoleInput ==  'false9(support)'  or RoleInput ==  'false-9(support)' :
