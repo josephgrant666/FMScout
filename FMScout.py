@@ -46,12 +46,11 @@ def AnotherRoleQ(): # Asks the user if they would like to analyse another role i
         RoleQs()
     else:
         print('Thank you for using FMScout')
-        time.sleep(2)
         sys.exit()
 
 # Table columns for Goalkeeper roles.
 
-def GKfunc(): # This block of code adds together the rquired attributes for this role, reduces the influence of preferred attributes by 40% and then produces an average score.
+def GKfunc(): # This function as well as all other role functions add together the required attributes for this role, reduces the influence of preferred attributes by 40% and then produces an average score.
     FMScoutFile['GK'] = ((FMScoutFile['1v1'] * 0.6) + 
                         (FMScoutFile['Aer']) + 
                         (FMScoutFile['Agi']) + 
@@ -72,7 +71,7 @@ def GKfunc(): # This block of code adds together the rquired attributes for this
     open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
     webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser. 
 
-def SKdefunc(): # This block of code adds together the rquired attributes for this role, reduces the influence of preferred attributes by 40% and then produces an average score.
+def SKdefunc(): 
     FMScoutFile['SKde'] = ((FMScoutFile['1v1'] * 0.6) + 
                         (FMScoutFile['Aer']) + 
                         (FMScoutFile['Acc']) + 
@@ -98,7 +97,7 @@ def SKdefunc(): # This block of code adds together the rquired attributes for th
     open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
     webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser. 
 
-def SKsufunc(): # This block of code adds together the rquired attributes for this role, reduces the influence of preferred attributes by 40% and then produces an average score.
+def SKsufunc(): 
     FMScoutFile['SKsu'] = ((FMScoutFile['1v1'] * 0.6) + 
                         (FMScoutFile['Aer']) + 
                         (FMScoutFile['Acc']) + 
@@ -126,7 +125,7 @@ def SKsufunc(): # This block of code adds together the rquired attributes for th
     open(filename, "w", encoding="utf-8").write(html) # Opens the file on the system and adds the data to it.
     webbrowser.open(os.path.realpath(filename)) # Opens the newly created file in the browser. 
 
-def SKatfunc(): # This block of code adds together the rquired attributes for this role, reduces the influence of preferred attributes by 40% and then produces an average score.
+def SKatfunc(): 
     FMScoutFile['SKat'] = ((FMScoutFile['1v1'] * 0.6) + 
                         (FMScoutFile['Aer']) + 
                         (FMScoutFile['Acc']) + 
@@ -2188,7 +2187,7 @@ def RoleQs(): # Asks user which role they would like analysed.
         elif RoleInput == 'wbde' or RoleInput ==  'wbdefend' or RoleInput ==  'wb(defend)' or RoleInput ==  'wb(de)'  or RoleInput ==  'wingback(de)'  or RoleInput ==  'wing-back(de)'  or RoleInput ==  'wingbackde'  or RoleInput ==  'wing-backde'  or RoleInput ==  'wingbackdefend'  or RoleInput ==  'wing-backdefend'  or RoleInput ==  'wingback(defend)'  or RoleInput ==  'wing-back(defend)' :
             WBdefunc()
             AnotherRoleQ()
-        elif RoleInput == 'wbsu'  or RoleInput == 'wb' or RoleInput == 'wingback' or RoleInput ==  'wbsupport' or RoleInput ==  'wb(support)' or RoleInput ==  'wb(su)' or RoleInput ==  'wingback(su)'  or RoleInput ==  'wing-back(su)'  or RoleInput ==  'wingbacksu'  or RoleInput ==  'wing-backsu'  or RoleInput ==  'wingbacksupport'  or RoleInput ==  'wing-backsupport'  or RoleInput ==  'wingback(support)'  or RoleInput ==  'wing-back(support)' :
+        elif RoleInput == 'wbsu'  or RoleInput == 'wb' or RoleInput == 'wingback' or RoleInput == 'wing-back' or RoleInput ==  'wbsupport' or RoleInput ==  'wb(support)' or RoleInput ==  'wb(su)' or RoleInput ==  'wingback(su)'  or RoleInput ==  'wing-back(su)'  or RoleInput ==  'wingbacksu'  or RoleInput ==  'wing-backsu'  or RoleInput ==  'wingbacksupport'  or RoleInput ==  'wing-backsupport'  or RoleInput ==  'wingback(support)'  or RoleInput ==  'wing-back(support)' :
             WBsufunc()
             AnotherRoleQ()
         elif RoleInput == 'wbat'   or RoleInput ==  'wb(at)'   or RoleInput ==  'wbattack'   or RoleInput ==  'wb(attack)'   or RoleInput ==  'wingback(at)'    or RoleInput ==  'wing-back(at)'    or RoleInput ==  'wingbackat'    or RoleInput ==  'wing-backat'    or RoleInput ==  'wingbackattack'    or RoleInput ==  'wing-backattack'    or RoleInput ==  'wingback(attack)'    or RoleInput ==  'wing-back(attack)':
@@ -2200,7 +2199,7 @@ def RoleQs(): # Asks user which role they would like analysed.
         elif RoleInput == 'cwbat'  or RoleInput ==  'cwb(at)' or RoleInput ==  'cwbattack' or RoleInput ==  'cwb(attack)' or RoleInput ==  'completewingback(at)'  or RoleInput ==  'completewing-back(at)'  or RoleInput ==  'completewingbackat'  or RoleInput ==  'completewing-backat'  or RoleInput ==  'completewingbackattack'  or RoleInput ==  'completewing-backattack'  or RoleInput ==  'completewingback(attack)'  or RoleInput ==  'completewing-back(attack)' or RoleInput ==  'complete-wingback(at)'  or RoleInput ==  'complete-wingbackat'  or RoleInput ==  'complete-wing-backat'  or RoleInput ==  'complete-wingbackattack'  or RoleInput ==  'complete-wing-backattack'  or RoleInput ==  'complete-wingback(attack)'  or RoleInput ==  'complete-wing-back(attack)' :
             CWBatfunc()
             AnotherRoleQ()
-        elif RoleInput == 'iwbde'  or RoleInput ==  'iwb(de)' or RoleInput ==  'iwbdefend' or RoleInput ==  'iwb(defend)' or RoleInput ==  'invertedwingback(de)'  or RoleInput ==  'invertedwing-back(de)'  or RoleInput ==  'invertedwingbackde'  or RoleInput ==  'invertedwing-backde'  or RoleInput ==  'invertedwingbackdefend'  or RoleInput ==  'invertedwing-backdefend'  or RoleInput ==  'invertedwingback(defend)'  or RoleInput ==  'invertedwing-back(defend)' or RoleInput ==  'inverted-wingback(de)'  or RoleInput ==  'inverted-wingbackde'  or RoleInput ==  'inverted-wing-backde'  or RoleInput ==  'inverted-wingbackdefend'  or RoleInput ==  'inverted-wing-backdefend'  or RoleInput ==  'inverted-wingback(defend)'  or RoleInput ==  'inverted-wing-back(defend)' :
+        elif RoleInput == 'iwb'  or RoleInput == 'iwbde'  or RoleInput ==  'iwb(de)' or RoleInput ==  'iwbdefend' or RoleInput ==  'iwb(defend)' or RoleInput == 'invertedwingback' or RoleInput == 'invertedwing-back' or RoleInput == 'inverted-wing-back' or RoleInput == 'inverted-wingback' or RoleInput ==  'invertedwingback(de)'  or RoleInput ==  'invertedwing-back(de)'  or RoleInput ==  'invertedwingbackde'  or RoleInput ==  'invertedwing-backde'  or RoleInput ==  'invertedwingbackdefend'  or RoleInput ==  'invertedwing-backdefend'  or RoleInput ==  'invertedwingback(defend)'  or RoleInput ==  'invertedwing-back(defend)' or RoleInput ==  'inverted-wingback(de)'  or RoleInput ==  'inverted-wingbackde'  or RoleInput ==  'inverted-wing-backde'  or RoleInput ==  'inverted-wingbackdefend'  or RoleInput ==  'inverted-wing-backdefend'  or RoleInput ==  'inverted-wingback(defend)'  or RoleInput ==  'inverted-wing-back(defend)' :
             IWBdefunc()
             AnotherRoleQ()
         elif RoleInput == 'iwbsu'  or RoleInput ==  'iwb(su)' or RoleInput ==  'iwbsupport' or RoleInput ==  'iwb(support)' or RoleInput ==  'invertedwingback(su)'  or RoleInput ==  'invertedwing-back(su)'  or RoleInput ==  'invertedwingbacksu'  or RoleInput ==  'invertedwing-backsu'  or RoleInput ==  'invertedwingbacksupport'  or RoleInput ==  'invertedwing-backsupport'  or RoleInput ==  'invertedwingback(support)'  or RoleInput ==  'invertedwing-back(support)' or RoleInput ==  'inverted-wingback(su)'  or RoleInput ==  'inverted-wingbacksu'  or RoleInput ==  'inverted-wing-backsu'  or RoleInput ==  'inverted-wingbacksupport'  or RoleInput ==  'inverted-wing-backsupport'  or RoleInput ==  'inverted-wingback(support)'  or RoleInput ==  'inverted-wing-back(support)' :
@@ -2344,10 +2343,10 @@ def RoleQs(): # Asks user which role they would like analysed.
 
         # Central attacking midfield roles
 
-        elif RoleInput == 'apmsu' or RoleInput ==  'apm'  or RoleInput ==  'apm(su)' or RoleInput ==  'apmsupport' or RoleInput ==  'apm(support)' or RoleInput ==  'advancedplaymaker' or RoleInput ==  'advanced-playmaker' or RoleInput ==  'advanced-play-maker' or RoleInput ==  'advancedplay-maker' or RoleInput ==  'advancedplaymaker(su)' or RoleInput ==  'advancedplay-maker(su)'  or RoleInput ==  'advanced-playmaker(su)' or RoleInput ==  'advanced-play-maker(su)' or RoleInput ==  'advancedplaymaker(support)' or RoleInput ==  'advancedplay-maker(support)'  or RoleInput ==  'advanced-playmaker(support)' or RoleInput ==  'advanced-play-maker(support)' or RoleInput ==  'advancedplaymakersupport' or RoleInput ==  'advancedplay-makersupport'  or RoleInput ==  'advanced-playmakersupport' or RoleInput ==  'advanced-play-makersupport' :
+        elif RoleInput == 'apmsu' or RoleInput == 'apsu' or RoleInput ==  'apm'  or RoleInput ==  'apm(su)' or RoleInput ==  'apmsupport' or RoleInput ==  'apm(support)' or RoleInput ==  'advancedplaymaker' or RoleInput ==  'advanced-playmaker' or RoleInput ==  'advanced-play-maker' or RoleInput ==  'advancedplay-maker' or RoleInput ==  'advancedplaymaker(su)' or RoleInput ==  'advancedplay-maker(su)'  or RoleInput ==  'advanced-playmaker(su)' or RoleInput ==  'advanced-play-maker(su)' or RoleInput ==  'advancedplaymaker(support)' or RoleInput ==  'advancedplay-maker(support)'  or RoleInput ==  'advanced-playmaker(support)' or RoleInput ==  'advanced-play-maker(support)' or RoleInput ==  'advancedplaymakersupport' or RoleInput ==  'advancedplay-makersupport'  or RoleInput ==  'advanced-playmakersupport' or RoleInput ==  'advanced-play-makersupport' :
             APMsufunc()
             AnotherRoleQ()
-        elif RoleInput == 'apmat' or RoleInput ==  'apm(at)' or RoleInput ==  'apmattack' or RoleInput ==  'apm(attack)' or RoleInput ==  'advancedplaymaker(at)' or RoleInput ==  'advancedplay-maker(at)'  or RoleInput ==  'advanced-playmaker(at)' or RoleInput ==  'advanced-play-maker(at)' or RoleInput ==  'advancedplaymaker(attack)' or RoleInput ==  'advancedplay-maker(attack)'  or RoleInput ==  'advanced-playmaker(attack)' or RoleInput ==  'advanced-play-maker(attack)' or RoleInput ==  'advancedplaymakerattack' or RoleInput ==  'advancedplay-makerattack'  or RoleInput ==  'advanced-playmakerattack' or RoleInput ==  'advanced-play-makerattack' :
+        elif RoleInput == 'ap' or RoleInput == 'apat' or RoleInput == 'apmat' or RoleInput ==  'apm(at)' or RoleInput ==  'apmattack' or RoleInput == 'apm(attack)' or RoleInput == 'advancedplaymaker' or RoleInput == 'advancedplay-maker' or RoleInput == 'advanced-play-maker' or RoleInput == 'advanced-playmaker' or RoleInput ==  'advancedplaymaker(at)' or RoleInput ==  'advancedplay-maker(at)'  or RoleInput ==  'advanced-playmaker(at)' or RoleInput ==  'advanced-play-maker(at)' or RoleInput ==  'advancedplaymaker(attack)' or RoleInput ==  'advancedplay-maker(attack)'  or RoleInput ==  'advanced-playmaker(attack)' or RoleInput ==  'advanced-play-maker(attack)' or RoleInput ==  'advancedplaymakerattack' or RoleInput ==  'advancedplay-makerattack'  or RoleInput ==  'advanced-playmakerattack' or RoleInput ==  'advanced-play-makerattack' :
             APMatfunc()
             AnotherRoleQ()
         elif RoleInput == 'amsu' or RoleInput ==  'amsupport' or RoleInput ==  'am(support)' or RoleInput ==  'am' or RoleInput ==  'attackingmid' or RoleInput ==  'attacking-mid' or RoleInput ==  'attackingmidfielder' or RoleInput ==  'attacking-midfielder' or RoleInput ==  'am(su)'  or RoleInput ==  'attackingmid(su)'  or RoleInput ==  'attackingmidfielder(su)'  or RoleInput ==  'attacking-mid(su)'  or RoleInput ==  'attacking-midfielder(su)'  or RoleInput ==  'attackingmid(support)'  or RoleInput ==  'attackingmidfielder(support)'  or RoleInput ==  'attacking-mid(support)'  or RoleInput ==  'attacking-midfielder(support)'  or RoleInput ==  'attackingmidsu'  or RoleInput ==  'attackingmidfieldersu'  or RoleInput ==  'attacking-midsu'  or RoleInput ==  'attacking-midfieldersu'  or RoleInput ==  'attackingmidsupport'  or RoleInput ==  'attackingmidfieldersupport'  or RoleInput ==  'attacking-midsupport'  or RoleInput ==  'attacking-midfieldersupport'  :
@@ -2380,10 +2379,10 @@ def RoleQs(): # Asks user which role they would like analysed.
         elif RoleInput == 'ifat'  or RoleInput ==  'if(at)' or RoleInput ==  'ifattack' or RoleInput ==  'if(attack)' or RoleInput ==  'insideforward(at)'  or RoleInput ==  'inside-forward(at)'  or RoleInput ==  'insideforwardat'  or RoleInput ==  'inside-forwardat'  or RoleInput ==  'insideforwardattack'  or RoleInput ==  'inside-forwardattack' or RoleInput ==  'insideforward(attack)'  or RoleInput ==  'inside-forward(attack)' :
             IFatfunc()
             AnotherRoleQ()
-        elif RoleInput == 'winsu'   or RoleInput ==  'w'   or RoleInput ==  'wsu'   or RoleInput ==  'w(su)'   or RoleInput ==  'win'   or RoleInput ==  'winger'   or RoleInput ==  'win(su)'   or RoleInput ==  'winsupport'   or RoleInput ==  'win(support)'   or RoleInput ==  'winger(su)'   or RoleInput ==  'wingersupport'   or RoleInput ==  'winger(support)' :
+        elif RoleInput == 'winsu'   or RoleInput ==  'w'   or RoleInput ==  'wsu'   or RoleInput ==  'w(su)'   or RoleInput ==  'win'   or RoleInput ==  'winger' or RoleInput ==  'wingersu'  or RoleInput ==  'win(su)'   or RoleInput ==  'winsupport'   or RoleInput ==  'win(support)'   or RoleInput ==  'winger(su)'   or RoleInput ==  'wingersupport'   or RoleInput ==  'winger(support)' :
             WINsufunc()
             AnotherRoleQ()
-        elif RoleInput == 'winat'   or RoleInput ==  'wat'   or RoleInput ==  'w(at)'   or RoleInput ==  'win(at)'   or RoleInput ==  'winattack'   or RoleInput ==  'win(attack)'   or RoleInput ==  'winger(at)'   or RoleInput ==  'wingerattack'   or RoleInput ==  'winger(attack)' :
+        elif RoleInput == 'winat'   or RoleInput ==  'wat'   or RoleInput ==  'w(at)'   or RoleInput ==  'win(at)'   or RoleInput ==  'winattack' or RoleInput ==  'wingerat'   or RoleInput ==  'win(attack)'   or RoleInput ==  'winger(at)'   or RoleInput ==  'wingerattack'   or RoleInput ==  'winger(attack)' :
             WINatfunc()
             AnotherRoleQ()
         elif RoleInput == 'rmdat'   or RoleInput ==  'rmd'   or RoleInput ==  'rmd(at)'   or RoleInput ==  'rmdattack'   or RoleInput ==  'rmd(attack)'   or RoleInput ==  'raumdeuter'   or RoleInput ==  'raumdeuter(at)'   or RoleInput ==  'raumdeuterattack'   or RoleInput ==  'raumdeuter(attack)' :
