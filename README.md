@@ -1,3 +1,5 @@
+# FMScout
+
 This project was the first moment that I felt like after learning different skills and building my confidence, it was time to build an app of use that displayed my skills and could be developed more and more as an ongoing project. I wanted to build something that a) was useful to me, b) I would have fun building and c) could integrate the skills that I had learnt.
 
 Football manager is my favourite game to play and as a backend developer, I saw it as the perfect focus for my first project. The game heavily relies upon the use of data in order to create gameplay for the user, but involves a lot of guessing and 'feeling'. I wanted to find a way of removing this and manipulating the data in my own way in order to optimise my performance in the game.
