@@ -1,0 +1,432 @@
+
+        <html>
+        <header>
+            <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+        </header>
+        <body>
+        <table border="1" class="dataframe" id="table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Name</th>
+      <th>Position</th>
+      <th>Inf</th>
+      <th>Av Rat</th>
+      <th>Age</th>
+      <th>Club</th>
+      <th>Wage</th>
+      <th>Height</th>
+      <th>Left Foot</th>
+      <th>Right Foot</th>
+      <th>Transfer Value</th>
+      <th>FBat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kenta Kikuchi</td>
+      <td>D/WB/M (L)</td>
+      <td></td>
+      <td>6.86</td>
+      <td>27</td>
+      <td>Kanazawa</td>
+      <td>£12,000 p/w</td>
+      <td>5'7"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£350K - £550K</td>
+      <td>10.2</td>
+    </tr>
+    <tr>
+      <td>Aimé Tendeng</td>
+      <td>M/AM (C)</td>
+      <td>Inj</td>
+      <td>-</td>
+      <td>27</td>
+      <td>Kanazawa</td>
+      <td>£10,500 p/w</td>
+      <td>6'1"</td>
+      <td>Very Strong</td>
+      <td>Weak</td>
+      <td>£375K - £850K</td>
+      <td>10.1</td>
+    </tr>
+    <tr>
+      <td>Gwon Seong-Yun</td>
+      <td>M (R), AM (RLC)</td>
+      <td>Fgn</td>
+      <td>7.04</td>
+      <td>27</td>
+      <td>Kanazawa</td>
+      <td>£17,250 p/w</td>
+      <td>5'9"</td>
+      <td>Weak</td>
+      <td>Very Strong</td>
+      <td>£450K - £1.1M</td>
+      <td>9.9</td>
+    </tr>
+    <tr>
+      <td>Masatoshi Ishida</td>
+      <td>AM (RLC), ST (C)</td>
+      <td></td>
+      <td>6.97</td>
+      <td>32</td>
+      <td>Kanazawa</td>
+      <td>£14,250 p/w</td>
+      <td>5'11"</td>
+      <td>Very Weak</td>
+      <td>Very Strong</td>
+      <td>£300K - £475K</td>
+      <td>9.6</td>
+    </tr>
+    <tr>
+      <td>Fuchi Honda</td>
+      <td>M/AM (C), ST (C)</td>
+      <td></td>
+      <td>6.97</td>
+      <td>26</td>
+      <td>Kanazawa</td>
+      <td>£14,250 p/w</td>
+      <td>5'7"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£325K - £800K</td>
+      <td>9.6</td>
+    </tr>
+    <tr>
+      <td>Kuryu Matsuki</td>
+      <td>DM, M/AM (C)</td>
+      <td></td>
+      <td>6.83</td>
+      <td>24</td>
+      <td>Kanazawa</td>
+      <td>£22,500 p/w</td>
+      <td>5'11"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£120K - £1M</td>
+      <td>9.5</td>
+    </tr>
+    <tr>
+      <td>Tsukasa Morishima</td>
+      <td>M (RC), AM (RLC)</td>
+      <td>Opt</td>
+      <td>6.20</td>
+      <td>30</td>
+      <td>Kanazawa</td>
+      <td>£34,000 p/w</td>
+      <td>5'9"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£130K - £600K</td>
+      <td>9.4</td>
+    </tr>
+    <tr>
+      <td>Kazuya Miyahara</td>
+      <td>D (RC), WB (R), DM</td>
+      <td>PR</td>
+      <td>6.96</td>
+      <td>32</td>
+      <td>Kanazawa</td>
+      <td>£39,000 p/w</td>
+      <td>5'8"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£90K - £250K</td>
+      <td>9.2</td>
+    </tr>
+    <tr>
+      <td>Rashid Alhassan</td>
+      <td>D (LC)</td>
+      <td>Fgn</td>
+      <td>6.80</td>
+      <td>27</td>
+      <td>Kanazawa</td>
+      <td>£22,500 p/w</td>
+      <td>5'11"</td>
+      <td>Very Strong</td>
+      <td>Fairly Strong</td>
+      <td>£350K - £550K</td>
+      <td>9.1</td>
+    </tr>
+    <tr>
+      <td>Rei Hirakawa</td>
+      <td>DM, M (C)</td>
+      <td></td>
+      <td>6.76</td>
+      <td>27</td>
+      <td>Kanazawa</td>
+      <td>£4,100 p/w</td>
+      <td>5'9"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£75K - £230K</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>Kai Shibato</td>
+      <td>D (C), DM, M (C)</td>
+      <td></td>
+      <td>6.88</td>
+      <td>32</td>
+      <td>Kanazawa</td>
+      <td>£29,500 p/w</td>
+      <td>5'11"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£100K - £275K</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <td>Katsuya Nakano</td>
+      <td>M (R), AM (RL)</td>
+      <td>Wnt</td>
+      <td>-</td>
+      <td>31</td>
+      <td>Kanazawa</td>
+      <td>£3,100 p/w</td>
+      <td>5'6"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£40K - £190K</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <td>Nagi Matsumoto</td>
+      <td>DM, M (C)</td>
+      <td>U18</td>
+      <td>-</td>
+      <td>26</td>
+      <td>Kanazawa</td>
+      <td>£10,000 p/w</td>
+      <td>5'7"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£30K - £190K</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <td>Ryusuke Kawamura</td>
+      <td>M/AM (L), ST (C)</td>
+      <td></td>
+      <td>7.15</td>
+      <td>20</td>
+      <td>Kanazawa</td>
+      <td>£8,750 p/w</td>
+      <td>5'8"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£500K - £1.2M</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <td>Shuhei Tokumoto</td>
+      <td>D/WB/M/AM (L)</td>
+      <td>Inj</td>
+      <td>-</td>
+      <td>32</td>
+      <td>Kanazawa</td>
+      <td>£4,000 p/w</td>
+      <td>5'7"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£24K - £110K</td>
+      <td>8.8</td>
+    </tr>
+    <tr>
+      <td>Hiroaki Saijo</td>
+      <td>M (R), AM (RC), ST (C)</td>
+      <td>Wnt</td>
+      <td>6.80</td>
+      <td>20</td>
+      <td>Kanazawa</td>
+      <td>£4,100 p/w</td>
+      <td>5'10"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£180K - £750K</td>
+      <td>8.6</td>
+    </tr>
+    <tr>
+      <td>Tomofumi Fujiyama</td>
+      <td>D (R), DM</td>
+      <td>U18</td>
+      <td>6.50</td>
+      <td>33</td>
+      <td>Kanazawa</td>
+      <td>£6,750 p/w</td>
+      <td>5'6"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£35K - £55K</td>
+      <td>8.5</td>
+    </tr>
+    <tr>
+      <td>Davy Claude Kéké</td>
+      <td>D (C)</td>
+      <td>Fgn</td>
+      <td>6.97</td>
+      <td>19</td>
+      <td>Kanazawa</td>
+      <td>£8,750 p/w</td>
+      <td>6'4"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£350K - £1.6M</td>
+      <td>8.5</td>
+    </tr>
+    <tr>
+      <td>Atsuki Satsukawa</td>
+      <td>D/WB/M (RL)</td>
+      <td>U18</td>
+      <td>-</td>
+      <td>30</td>
+      <td>Kanazawa</td>
+      <td>£2,000 p/w</td>
+      <td>5'7"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£95K - £150K</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <td>Shoi Sase</td>
+      <td>D (RC)</td>
+      <td></td>
+      <td>6.98</td>
+      <td>20</td>
+      <td>Kanazawa</td>
+      <td>£5,500 p/w</td>
+      <td>6'1"</td>
+      <td>Fairly Strong</td>
+      <td>Very Strong</td>
+      <td>£550K - £1.3M</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <td>Issei Omura</td>
+      <td>DM, M (C)</td>
+      <td>HGC</td>
+      <td>-</td>
+      <td>20</td>
+      <td>Kanazawa</td>
+      <td>£1,300 p/w</td>
+      <td>5'6"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£400K - £750K</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <td>Toya Nakamura</td>
+      <td>D (LC)</td>
+      <td>U18</td>
+      <td>6.60</td>
+      <td>27</td>
+      <td>Kanazawa</td>
+      <td>£23,500 p/w</td>
+      <td>6'1"</td>
+      <td>Very Strong</td>
+      <td>Reasonable</td>
+      <td>£85K - £425K</td>
+      <td>7.8</td>
+    </tr>
+    <tr>
+      <td>Taiyo Igarashi</td>
+      <td>ST (C)</td>
+      <td>U18</td>
+      <td>-</td>
+      <td>24</td>
+      <td>Kanazawa</td>
+      <td>£2,300 p/w</td>
+      <td>5'8"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£75K</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <td>Toshiki Sakurai</td>
+      <td>M (LC), AM (C)</td>
+      <td>HGC</td>
+      <td>-</td>
+      <td>18</td>
+      <td>Kanazawa</td>
+      <td>£55 p/w</td>
+      <td>5'7"</td>
+      <td>Very Strong</td>
+      <td>Fairly Strong</td>
+      <td>£22K - £230K</td>
+      <td>7.1</td>
+    </tr>
+    <tr>
+      <td>Shin'ya Hirooka</td>
+      <td>D (C), DM, M (C)</td>
+      <td>HGC</td>
+      <td>6.63</td>
+      <td>20</td>
+      <td>Kanazawa</td>
+      <td>£1,200 p/w</td>
+      <td>6'2"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£45K - £425K</td>
+      <td>6.9</td>
+    </tr>
+    <tr>
+      <td>Tomoya Wakahara</td>
+      <td>GK</td>
+      <td></td>
+      <td>6.88</td>
+      <td>28</td>
+      <td>Kanazawa</td>
+      <td>£6,000 p/w</td>
+      <td>6'1"</td>
+      <td>Very Weak</td>
+      <td>Very Strong</td>
+      <td>£70K - £190K</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <td>Daichi Sugimoto</td>
+      <td>GK</td>
+      <td>U18</td>
+      <td>-</td>
+      <td>34</td>
+      <td>Kanazawa</td>
+      <td>£2,000 p/w</td>
+      <td>6'2"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£14K - £60K</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <td>Takayuki Takahashi</td>
+      <td>GK</td>
+      <td>HGC</td>
+      <td>-</td>
+      <td>19</td>
+      <td>Kanazawa</td>
+      <td>£475 p/w</td>
+      <td>6'0"</td>
+      <td>Reasonable</td>
+      <td>Very Strong</td>
+      <td>£120K - £230K</td>
+      <td>4.9</td>
+    </tr>
+  </tbody>
+</table>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready( function () {
+                $('#table').DataTable({
+                    paging: false,
+                    order: [[12, 'desc']],
+                    // scrollY: 400,
+                });
+            });
+        </script>
+        </body>
+        </html>
+        
